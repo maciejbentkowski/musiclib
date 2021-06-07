@@ -1,7 +1,47 @@
-<% @discs.each do |disc| %>
-<%= disc.disc_name%><br>
 
+<table class="table is-striped is-hoverable is-fullwidth ">
+
+<thead>
+<tr>
+<th>
+Id
+</th>
+<th>
+Nazwa płyty
+</th>
+<th>
+Wykonawcy
+</th>
+<th>
+Liczba utworów
+</th>
+<th>
+Data premiery
+</th>
+</tr>
+</thead>
+<% @discs.each do |disc| %>
+<tr>
+<td>
+<%= disc.id%><br>
+</td>
+<td>
+<%= disc.disc_name%><br>
+</td>
+<td>
+<%= @artist.artist_name%><br>
+</td>
+<td>
+<h1>Liczba utworów</h1>
+</td>
+<td>
+Data premiery
+</td>
+</tr>
 <% end %>
+</table>
+
+
 
 
 <%= link_to "Powrót do Artystów", artists_path%>
