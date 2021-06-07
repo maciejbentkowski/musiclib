@@ -1,0 +1,27 @@
+<section class="container">
+  <% @artists.each_slice(3) do |batch| %>
+    <div class="columns features">
+    <% batch.each do |artist| %>
+      <div class="column is-4">
+        <div class="card is-shady">
+          <div class="card-image">
+            <figure class="image is-4by3">
+              <img src="https://fuzati.com/wp-content/uploads/2016/12/Ruby-Logo.png" alt="Placeholder image" class="modal-button" data-target="modal-image2">
+            </figure>
+          </div>
+          <div class="card-content">
+            <div class="content">
+              <h5><%= artist.artist_name %></h5>
+              <span class="button is-link">
+                <%= link_to(artist) do %>
+                  <span class="has-text-white is-size-6 has-text-weight-semibold">Details</span>
+                <% end %>
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+  <% end %>
+</section>

@@ -1,0 +1,12 @@
+Płyty
+
+
+<%= form_with(model: [ @artist, Disc.new] ) do |form| %>
+    <div>
+        <%= form.label :disc_name %>
+        <%= form.text_field :disc_name %>
+    </div>
+    <div>
+        <%= form.submit %>
+    </div>
+  <% end %>

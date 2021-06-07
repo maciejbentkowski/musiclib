@@ -1,0 +1,11 @@
+<%= form_with(model: @artist) do |form| %>
+    <div>
+        <%= form.label :artist_name %>
+        <%= form.text_field :artist_name %>
+    </div>
+    <div>
+        <%= form.submit %>
+    </div>
+  <% end %>
+
+  <li><%= link_to "Powrót", root_path %></li>
