@@ -10,18 +10,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_06_09_110005) do
+ActiveRecord::Schema.define(version: 2021_06_09_163637) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "artist_disc_associations", force: :cascade do |t|
+  create_table "artist_discs", force: :cascade do |t|
     t.bigint "artist_id"
     t.bigint "disc_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["artist_id"], name: "index_artist_disc_associations_on_artist_id"
-    t.index ["disc_id"], name: "index_artist_disc_associations_on_disc_id"
+    t.index ["artist_id"], name: "index_artist_discs_on_artist_id"
+    t.index ["disc_id"], name: "index_artist_discs_on_disc_id"
   end
 
   create_table "artists", force: :cascade do |t|

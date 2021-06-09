@@ -1,4 +1,4 @@
-<%= form_with model: [@disc, @artist.discs.build] do |form| %>
+<%= form_for [@artist, @disc] do |form| %>
     <div>
         <%= form.label :disc_name %>
         <%= form.text_field :disc_name %>

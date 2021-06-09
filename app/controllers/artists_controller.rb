@@ -4,6 +4,7 @@ class ArtistsController < ApplicationController
     end
     def show
         @artist = Artist.find(params[:id])
+        @disc = Disc.new
     end
     def new
         @artist = Artist.new
@@ -41,4 +42,5 @@ class ArtistsController < ApplicationController
         def artist_params
             params.require(:artist).permit(:artist_name)
         end
+
 end
