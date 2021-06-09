@@ -1,11 +1,12 @@
 <%= @artist.artist_name%><br>
 
 <%@artist.discs.each do |disc|%>
-<%=link_to disc.disc_name, disc_path(@disc)%><br>
+<%=link_to disc.disc_name, disc_path%><br>
 <% end %>
 
 <br>
 
+<%= render "discs/form"%>
 
 <ul>
   <li><%= link_to "Powrót", root_path %></li>

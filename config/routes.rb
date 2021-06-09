@@ -5,7 +5,7 @@ Rails.application.routes.draw do
         resources :discs, only: [:show]
     end
     resources :discs do
-        resources :tracks
+        resources :songs
     end
 
 end
