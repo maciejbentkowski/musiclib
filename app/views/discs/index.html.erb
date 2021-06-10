@@ -26,10 +26,12 @@ Data premiery
 <%= disc.id%><br>
 </td>
 <td>
-<%=link_to disc.disc_name, disc%><br>
+<%=link_to disc.disc_name, disc_path(disc)%>
 </td>
 <td>
-<%= @artist.artist_name%><br>
+<% disc.artists.each do |artist| %>
+<%=link_to artist.artist_name, artist_path(artist)%><br>
+<% end %>
 </td>
 <td>
 <h1>Liczba utworów</h1>

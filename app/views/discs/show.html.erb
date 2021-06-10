@@ -1,6 +1,8 @@
-<%=@disc.disc_name%>
-
-<%=@artist.artist_name%>
+<%=@disc.disc_name%><br>
 
 
-<%=link_to "powrót do artysty", artist_path(@artist)%>
+<% @disc.artists.each do |artist| %>
+<%=artist.artist_name%><br>
+<% end %>
+
+<%=link_to "powrót do listy płyt", discs_path%>
