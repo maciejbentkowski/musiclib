@@ -13,7 +13,9 @@
   <body>
 
         <%= render "home/nav"%>
-      <%= yield %>
+         <%= flash[:alert] %>
+          <%= flash[:notice] %>
+           <%= yield %>
           <%= render "home/footer"%>
 
   </body>
