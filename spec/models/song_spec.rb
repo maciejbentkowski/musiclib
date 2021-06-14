@@ -1,15 +1,23 @@
 require 'rails_helper'
 
 RSpec.describe Song, type: :model do
-  sample_disc = Disc.first_or_create!(disc_name: 'Sample disc name')
+  let(:sample_disc) { Disc.first_or_create!(disc_name: 'Sample disc name')}
+  before(:each) do
+    @song = Song.new(song_name: '', disc_id: sample_disc.id)
+  end
 
   it "Song has a name" do
-    song = Song.new(
-      song_name: '',
-      disc_id: sample_disc.id
-    )
-  expect(song).to_not be_valid
-  song.song_name = 'sample name'
-  expect(song).to be_valid
+  expect(@song).to_not be_valid
+  @song.song_name = 'sample name'
+  expect(@song).to be_valid
+  end
+
+  it "Song name is not longer than 50" do
+    sample_string_with_51_characters ="xRzahEV2xn7fBykp4hcoVvG84vjG4rJfz5gzK59H6l6HslbFoyG"
+    @song.song_name = sample_string_with_51_characters
+    expect(@song).to_not be_valid
+    sample_string_with_50_characters ="RJNUpC6tsGNAcQ5HALPlwkDYrZXXpxvWNFyTX55XeWC0Cphxel"
+    @song.song_name = sample_string_with_50_characters
+    expect(@song).to be_valid
   end
 end
