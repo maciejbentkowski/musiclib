@@ -5,6 +5,7 @@ class ArtistsController < ApplicationController
     def show
         @artist = Artist.find(params[:id])
         @disc = Disc.new
+        @discs = Disc.find_by(params[:artist_id])
     end
     def new
         @artist = Artist.new
@@ -21,10 +22,10 @@ class ArtistsController < ApplicationController
     def edit
         @artist = Artist.find(params[:id])
       end
-    
+
       def update
         @artist = Artist.find(params[:id])
-    
+
         if @artist.update(artist_params)
           redirect_to @artist
         else
@@ -33,9 +34,11 @@ class ArtistsController < ApplicationController
     end
     def destroy
         @artist = Artist.find(params[:id])
+        @artist.discs.each do |disc|
+            disc.destroy
+          end
         @artist.destroy
-    
-        redirect_to root_path
+        redirect_to artists_path
     end
 
     private

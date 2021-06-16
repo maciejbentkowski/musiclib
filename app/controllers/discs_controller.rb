@@ -3,11 +3,13 @@ class DiscsController < ApplicationController
     @discs = Disc.all
     @artist = Artist.find_by(params[:disc_id])
   end
-  
-    def show
-      @disc = Disc.find(params[:id])
-    end
-  
+
+  def show
+    @disc = Disc.find(params[:id])
+    @song = Song.new
+    @songs = Song.find_by(params[:disc_id])
+
+  end
 
   def create
         @artist = Artist.find(params[:artist_id])
@@ -17,6 +19,13 @@ class DiscsController < ApplicationController
         else
           render :new
         end
+  end
+
+  def destroy
+    @disc = Disc.find(params[:id])
+    @disc.destroy
+
+    redirect_to artist_path
   end
       private
         def disc_params

@@ -1,4 +1,4 @@
 class ArtistDisc < ApplicationRecord
-    belongs_to :artist, dependent: :destroy
-    belongs_to :disc, dependent: :destroy
+    belongs_to :artist
+    belongs_to :disc
 end

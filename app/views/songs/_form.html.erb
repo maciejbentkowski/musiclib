@@ -1,0 +1,9 @@
+<%= form_for [@disc, @song] do |form| %>
+    <div>
+        <%= form.label :song_name %>
+        <%= form.text_field :song_name %>
+    </div>
+    <div>
+        <%= form.submit %>
+    </div>
+  <% end %>

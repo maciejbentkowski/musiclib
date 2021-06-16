@@ -5,4 +5,24 @@
 <%=artist.artist_name%><br>
 <% end %>
 
-<%=link_to "powrót do listy płyt", discs_path%>
+
+</br>
+</br>
+<% @disc.songs.each do |song| %>
+<%=song.song_name%><br>
+<% end %>
+
+
+<ul>
+ <li><%= link_to "Delete", disc_path(@disc),
+                  method: :delete,
+                  data: { confirm: "Are you sure?" } %></li>
+<li><%=link_to "powrót do listy płyt", discs_path%></li>
+</ul>
+</br>
+</br>
+</br>
+<%=render "songs/form"%>
+</br>
+</br>
+</br>

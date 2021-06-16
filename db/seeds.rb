@@ -5,3 +5,17 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+
+    5.times do |i|
+    artist = Artist.create(artist_name: "Artysta ##{i}")
+
+    3.times do |i|
+    disc = artist.discs.create(disc_name: "disc ##{i}")
+
+    3.times do |i|
+    song = disc.songs.create(song_name: "song ##{i}")
+    end
+    end
+    end
+
