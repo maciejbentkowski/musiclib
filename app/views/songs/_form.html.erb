@@ -1,0 +1,14 @@
+<%= form_for([@disc, @song], remote: true) do |form| %>
+    <div>
+        <%= form.label :song_name %>
+        <%= form.text_field :song_name %>
+    </div>
+        <div>
+        <%= form.label :track_number %>
+        <%= form.text_field :track_number%>
+
+    </div>
+    <div>
+        <%= form.submit %>
+    </div>
+  <% end %>

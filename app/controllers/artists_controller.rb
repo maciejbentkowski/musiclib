@@ -3,7 +3,7 @@ class ArtistsController < ApplicationController
         @artists = Artist.all
     end
     def show
-        @disc = Disc.find(params[:id])
+        @disc = Disc.find_by(params[:artist_id])
         @artist = Artist.find(params[:id])
         @disc = Disc.new
 

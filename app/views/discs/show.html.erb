@@ -9,6 +9,7 @@
 </br>
 </br>
 <% @disc.songs.each do |song| %>
+<%= song.track_number%>
 <%= song.song_name %><br>
 <% end %>
 
@@ -23,19 +24,7 @@
 </br>
 </br>
 
-<%= form_for([@disc, @song], remote: true) do |form| %>
-    <div>
-        <%= form.label :song_name %>
-        <%= form.text_field :song_name %>
-    </div>
-        <div>
-        <%= form.label :track_number %>
-        <%= form.number_field :track_number %>
-    </div>
-    <div>
-        <%= form.submit %>
-    </div>
-  <% end %>
+<%= render "songs/form" %>
 </br>
 </br>
 </br>
