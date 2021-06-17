@@ -3,9 +3,10 @@ class ArtistsController < ApplicationController
         @artists = Artist.all
     end
     def show
+        @disc = Disc.find(params[:id])
         @artist = Artist.find(params[:id])
         @disc = Disc.new
-        @discs = Disc.find_by(params[:artist_id])
+
     end
     def new
         @artist = Artist.new

@@ -7,13 +7,11 @@ class DiscsController < ApplicationController
   def show
     @disc = Disc.find(params[:id])
     @song = Song.new
-    @songs = Song.find_by(params[:disc_id])
-
   end
 
   def create
         @artist = Artist.find(params[:artist_id])
-        @disc = @artist.discs.create(disc_params)
+        @disc = @artist.discs.create!(disc_params)
         if @disc.save
         redirect_to artist_path(@artist)
         else
