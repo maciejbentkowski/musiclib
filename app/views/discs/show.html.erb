@@ -1,18 +1,38 @@
-<%=@disc.disc_name%><br>
 
+<div class="title is-2">
+<%=@disc.disc_name%><br>
+</div>
 
 <% @disc.artists.each do |artist| %>
-<%=artist.artist_name%><br>
+<div class="title is-4">
+<%=link_to artist.artist_name, artist_path(artist)%><br>
+</div>
+
 <% end %>
 
 
-</br>
-</br>
+<table class="table is-striped is-hoverable is-fullwidth ">
+<thead>
+<tr>
+<th>
+Lp
+</th>
+<th>
+Nazwa
+</th>
+</tr>
+</thead>
 <% @disc.songs.each do |song| %>
+<tr>
+<td>
 <%= song.track_number%>
+</td>
+<td>
 <%= song.song_name %><br>
+</td>
+</tr>
 <% end %>
-
+</table>
 
 <ul>
  <li><%= link_to "Delete", disc_path(@disc),

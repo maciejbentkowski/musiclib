@@ -5,7 +5,7 @@ class DiscsController < ApplicationController
   end
 
   def show
-    @disc = Disc.find_by(params[:artist_id])
+    @disc = Disc.find(params[:id])
     @song = Song.new
   end
 

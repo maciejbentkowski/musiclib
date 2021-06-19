@@ -1,9 +1,14 @@
+<h1>Add Disc</h1>
+</br>
+
 <%= form_for [@artist, @disc] do |form| %>
-    <div>
-        <%= form.label :disc_name %>
-        <%= form.text_field :disc_name %>
+    <div class="field ">
+        <%= form.label :disc_name, class:"label"%>
+        <div class = "control mx-1 mt-2">
+        <%= form.text_field :disc_name, class:"input"%>
     </div>
-    <div>
-        <%= form.submit %>
+    <div class="control mx-1 mt-2">
+        <%= form.submit class:"button is-primary"%>
     </div>
   <% end %>
+  </br>
