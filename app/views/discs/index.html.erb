@@ -1,55 +1,47 @@
+<section class="container mt-5">
+  <% @discs.each_slice(3) do |batch| %>
+    <div class="columns features">
+    <% batch.each do |disc| %>
+      <div class="column is-4">
+        <div class="card is-shady">
+          <div class="card-image">
+            <figure class="image is-4by3">
+              <img src="https://fuzati.com/wp-content/uploads/2016/12/Ruby-Logo.png" alt="Placeholder image" class="modal-button" data-target="modal-image2">
+            </figure>
+          </div>
+          <div class="card-header">
+          <div class="card-header-title is-centered">
+              <h5><%= disc.disc_name %></h5>
+            </div>
+          </div>
+            <div class="card-content">
+                        <div class="content">
+                <% disc.artists.each do |artist| %>
+                    <%=link_to  artist.artist_name, artist_path(artist)%><br>
+                <% end %>
+            </div>
 
-<table class="table is-striped is-hoverable is-fullwidth ">
+            <div class="content">
+            <%="Type: " << disc.music_type%>
+            </div>
 
-<thead>
-<tr>
-<th>
-Id
-</th>
-<th>
-Name
-</th>
-<th>
-Artist
-</th>
-<th>
-Type
-</th>
-<th>
-Tracks
-</th>
-<th>
-Premiere
-</th>
-</tr>
-</thead>
-<% @discs.each do |disc| %>
-<tr>
-<td>
-<%= disc.id%><br>
-</td>
-<td>
-<%=link_to disc.disc_name, disc_path(disc)%>
-</td>
-<td>
-<% disc.artists.each do |artist| %>
-<%=link_to artist.artist_name, artist_path(artist)%><br>
-<% end %>
-</td>
-<td>
-<%=disc.music_type %>
-</td>
-<td>
-<%=disc.songs.count %>
-</td>
-<td>
-Data premiery
-</td>
-</tr>
-<% end %>
-</table>
+            <div class="content">
+            Tracks number:
+            <%=disc.songs.count %>
+            </div>
 
+            </div>
+              <div class="card-footer">
+              <span class="card-footer-item button is-link">
+                <%= link_to(disc) do %>
+                  <span class="has-text-white is-size-6 has-text-weight-semibold">Details</span>
+                <% end %>
+              </span>
+              </div>
 
-
-
-<%= link_to "Powrót do Artystów", artists_path%>
+          </div>
+      </div>
+    <% end %>
+  </div>
+  <% end %>
+</section>
