@@ -34,17 +34,17 @@ Nazwa
 <% end %>
 </table>
 
-<ul>
- <li><%= link_to "Delete", disc_path(@disc),
-                  method: :delete,
-                  data: { confirm: "Are you sure?" } %></li>
-<li><%=link_to "powrót do listy płyt", discs_path%></li>
-</ul>
-</br>
-</br>
-</br>
-
 <%= render "songs/form" %>
+
+
+<div class="mx-1 mt-5">
+<%= link_to "Delete disc", disc_path(@disc),
+                  method: :delete,
+                  data: { confirm: "Are you sure?" }, class:"button is-danger" %></li>
+<%=link_to "Back to discs list ", discs_path, class:"button is-link"%></li>
+</div>
+
+
 </br>
 </br>
 </br>

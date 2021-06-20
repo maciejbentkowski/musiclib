@@ -1,14 +1,20 @@
 <%= form_for([@disc, @song], remote: true) do |form| %>
+    <div class="field">
     <div>
-        <%= form.label :song_name %>
-        <%= form.text_field :song_name %>
+        <%= form.label :song_name, class:"label" %>
+        <div class = "control mx-1 mt-2">
+        <%= form.text_field :song_name, class:"input" %>
+    </div>
     </div>
         <div>
-        <%= form.label :track_number %>
-        <%= form.text_field :track_number%>
+        <%= form.label :track_number, class:"label" %>
+                <div class = "control mx-1 mt-2">
+        <%= form.text_field :track_number, class:"input"%>
+        </div>
 
     </div>
-    <div>
-        <%= form.submit %>
+    </div>
+    <div class="control mx-1 mt-2">
+        <%= form.submit class:"button is-primary"%>
     </div>
   <% end %>
