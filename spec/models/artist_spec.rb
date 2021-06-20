@@ -27,10 +27,6 @@ RSpec.describe Artist, type: :model do
       artist.artist_name = "sample name"
       expect((artist).save!).to eq true
       end
-
-    it "destroy the instance" do
-      expect(artist).to exist
-    end
   end
 end
 

@@ -7,13 +7,18 @@
 <th>
 Disc Name
 </th>
+<th>
+Type
+</th>
 </thead>
 <%@artist.discs.each do |disc|%>
 <tr>
 <td>
-<%=link_to disc.disc_name, disc_path%><br>
+<%=link_to disc.disc_name, disc_path%>
 </td>
-</td>
+<td>
+<%= disc.music_type %>
+</tr>
 <% end %>
 </table>
 

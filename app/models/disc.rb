@@ -4,4 +4,5 @@ class Disc < ApplicationRecord
     has_many :songs, dependent: :destroy
 
     validates :disc_name, presence: true, length: {maximum: 50}
+    validates :music_type, presence: true
 end

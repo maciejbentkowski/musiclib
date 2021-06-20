@@ -7,16 +7,19 @@
 Id
 </th>
 <th>
-Nazwa płyty
+Name
 </th>
 <th>
-Wykonawcy
+Artist
 </th>
 <th>
-Liczba utworów
+Type
 </th>
 <th>
-Data premiery
+Tracks
+</th>
+<th>
+Premiere
 </th>
 </tr>
 </thead>
@@ -32,6 +35,9 @@ Data premiery
 <% disc.artists.each do |artist| %>
 <%=link_to artist.artist_name, artist_path(artist)%><br>
 <% end %>
+</td>
+<td>
+<%=disc.music_type %>
 </td>
 <td>
 <%=disc.songs.count %>

@@ -1,9 +1,10 @@
 require 'rails_helper'
 
 RSpec.describe Song, type: :model do
-  let(:sample_disc) { Disc.first_or_create!(disc_name: 'Sample disc name')}
+  let(:sample_disc) { Disc.first_or_create!(disc_name: 'Sample disc name', music_type: 'pop')}
   before(:each) do
     @song = Song.new(song_name: '',track_number: 1, disc_id: sample_disc.id)
+    @song.save
   end
   context "Song name validations" do
 

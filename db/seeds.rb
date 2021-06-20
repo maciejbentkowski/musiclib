@@ -11,7 +11,7 @@
     artist = Artist.create(artist_name: "Artysta ##{i}")
 
     3.times do |i|
-    disc = artist.discs.create(disc_name: "disc ##{i}")
+    disc = artist.discs.create(disc_name: "disc ##{i}", music_type:"pop")
 
     3.times do |i|
     song = disc.songs.create(song_name: "song ##{i}")

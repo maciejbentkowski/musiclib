@@ -2,10 +2,13 @@
 </br>
 
 <%= form_for [@artist, @disc] do |form| %>
-    <div class="field ">
+    <div class="field mx-1 mt-2">
         <%= form.label :disc_name, class:"label"%>
-        <div class = "control mx-1 mt-2">
+        <div class = "control">
         <%= form.text_field :disc_name, class:"input"%>
+        <%= form.label :music_type, class:"label"%>
+        <div class = "control">
+        <%= form.text_field :music_type, class:"input"%>
     </div>
     <div class="control mx-1 mt-2">
         <%= form.submit class:"button is-primary"%>
