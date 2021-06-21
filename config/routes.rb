@@ -7,5 +7,5 @@ Rails.application.routes.draw do
     resources :discs do
         resources :songs
     end
-
+    get '/songs', to: 'songs#index'
 end

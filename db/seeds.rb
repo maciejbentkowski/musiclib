@@ -13,8 +13,9 @@
     3.times do |i|
     disc = artist.discs.create(disc_name: "disc ##{i}", music_type:"pop")
 
-    3.times do |i|
-    song = disc.songs.create(song_name: "song ##{i}")
+    15.times do |i|
+    song = disc.songs.create(song_name: "song ##{i}", track_number: i)
+
     end
     end
     end

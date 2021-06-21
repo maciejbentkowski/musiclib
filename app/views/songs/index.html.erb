@@ -1,0 +1,31 @@
+<table class="table is-striped is-hoverable is-fullwidth ">
+
+<thead>
+<tr>
+<th>
+Id
+</th>
+<th>
+Name
+</th>
+<th>
+Discs
+</th>
+</tr>
+</thead>
+<% @songs.each do |song| %>
+<tr>
+<td>
+<%= song.id%><br>
+</td>
+<td>
+<%=link_to song.song_name, disc_song_path(@disc, song)%>
+</td>
+<td>
+<%=link_to song.disc.disc_name, disc_path(song.disc)%>
+</td>
+
+</tr>
+<% end %>
+</table>
+
