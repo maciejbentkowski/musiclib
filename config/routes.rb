@@ -1,6 +1,5 @@
 Rails.application.routes.draw do
-    root "home#index"
-    resource :home, only: [:index]
+    root "discs#index"
     resources :artists do
         resources :discs
     end
