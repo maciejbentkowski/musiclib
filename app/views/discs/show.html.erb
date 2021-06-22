@@ -28,7 +28,7 @@ Nazwa
 <%= song.track_number%>
 </td>
 <td>
-<%= song.song_name %><br>
+<%=link_to song.song_name, disc_song_path(@disc, song)  %><br>
 </td>
 </tr>
 <% end %>
