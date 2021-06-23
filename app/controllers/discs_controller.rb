@@ -1,7 +1,7 @@
 class DiscsController < ApplicationController
   def index
     @discs = Disc.all
-    @artist = Artist.find_by(params[:disc_id])
+
   end
 
   def show
