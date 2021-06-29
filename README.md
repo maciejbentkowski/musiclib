@@ -1,6 +1,6 @@
 # README
 
-Thats simple app for saving your CD collection
+Thats simple app to make worldwide CD collection - Avaliable at https://railsmusiclibapp.herokuapp.com/
 
 Ruby 3.0.1
 
