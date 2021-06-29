@@ -27,6 +27,6 @@ class DiscsController < ApplicationController
   end
       private
         def disc_params
-          params.require(:disc).permit(:disc_name, :music_type, :image)
+          params.require(:disc).permit(:disc_name, :music_type, :image, :premiere_date)
         end
 end
