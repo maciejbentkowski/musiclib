@@ -3,6 +3,7 @@ class SongsController < ApplicationController
         @songs = Song.all
         @disc = Disc.find_by(params[:disc_id])
         @song = Song.find_by(params[:id])
+        @artist = @disc.artists
     end
     def show
         @song = Song.find(params[:id])

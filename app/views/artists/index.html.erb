@@ -4,9 +4,6 @@
 <thead>
 <tr>
 <th>
-Id
-</th>
-<th>
 Name
 </th>
 <th>
@@ -16,9 +13,6 @@ Discs
 </thead>
 <% @artists.each do |artist| %>
 <tr>
-<td>
-<%= artist.id%><br>
-</td>
 <td>
 <%=link_to artist.artist_name, artist_path(artist)%>
 </td>

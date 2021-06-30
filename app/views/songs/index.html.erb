@@ -3,26 +3,28 @@
 <thead>
 <tr>
 <th>
-Id
-</th>
-<th>
 Name
 </th>
 <th>
-Discs
+Disc
+</th>
+<th>
+Artists
 </th>
 </tr>
 </thead>
 <% @songs.each do |song| %>
 <tr>
 <td>
-<%= song.id%><br>
-</td>
-<td>
 <%=link_to song.song_name, disc_song_path(@disc, song)%>
 </td>
 <td>
 <%=link_to song.disc.disc_name, disc_path(song.disc)%>
+</td>
+<td>
+<% @artist.each do |artist|%>
+<%=link_to artist.artist_name, artist_path(artist) %>
+<% end %>
 </td>
 
 </tr>
