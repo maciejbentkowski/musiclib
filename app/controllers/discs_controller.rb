@@ -6,6 +6,7 @@ class DiscsController < ApplicationController
 
   def show
     @disc = Disc.find(params[:id])
+    @songs = @disc.songs.order(:track_number)
     @song = Song.new
   end
 
