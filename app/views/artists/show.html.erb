@@ -29,7 +29,7 @@ Type
 <div class="mx-1">
 <%= link_to "Powrót", root_path, class:"button is-link" %>
 <%= link_to "Edit", edit_artist_path(@artist), class:"button is-warning" %>
-<%= link_to "Destroy", artist_path(@artist),
+<%= link_to "Delete Artist", artist_path(@artist),
                   method: :delete,
                   data: { confirm: "Are you sure?" },
                   class: "button is-danger" %>
