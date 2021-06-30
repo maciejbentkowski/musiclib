@@ -19,6 +19,15 @@ class SongsController < ApplicationController
         end
     end
 
+    def destroy
+
+    @disc = Disc.find(params[:disc_id])
+    @song = @disc.songs.find(params[:id])
+    @song.destroy
+
+    redirect_to disc_path(@disc)
+
+    end
 
     private
 

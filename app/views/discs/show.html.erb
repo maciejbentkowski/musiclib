@@ -30,6 +30,9 @@ Nazwa
 <td>
 <%=link_to song.song_name, disc_song_path(@disc, song)  %><br>
 </td>
+<td>
+<%=link_to "Delete Song", [song.disc, song], method: :delete, data: {confirm: "Are you sure?"}%>
+</td>
 </tr>
 <% end %>
 </table>
