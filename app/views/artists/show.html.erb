@@ -14,7 +14,7 @@ Type
 <%@artist.discs.each do |disc|%>
 <tr>
 <td>
-<%=link_to disc.disc_name, disc_path%>
+<%=link_to disc.disc_name, disc_path(disc) %>
 </td>
 <td>
 <%= disc.music_type %>
