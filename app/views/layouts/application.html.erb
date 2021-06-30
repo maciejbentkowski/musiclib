@@ -10,12 +10,14 @@
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
-  <body>
+  <body class="Site">
 
         <%= render "home/nav"%>
          <%= flash[:alert] %>
           <%= flash[:notice] %>
-           <%= yield %>
+            <main class="Site-content">
+              <%= yield %>
+            </main>
           <%= render "home/footer"%>
 
   </body>

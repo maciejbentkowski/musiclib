@@ -1,8 +1,11 @@
 
-<div class="title is-2">
+<div class="title is-size-3 has-text-weight-bold mx-3">
 <%=@disc.disc_name%><br>
 </div>
-
+   <figure class="is-1by1 mx-3 my-3">
+              <div class="modal-button">
+                  <%= image_tag(@disc.image)%>
+              </div>
 <% @disc.artists.each do |artist| %>
 <div class="title is-4">
 <%=link_to artist.artist_name, artist_path(artist)%><br>
@@ -20,6 +23,9 @@ Lp
 <th>
 Nazwa
 </th>
+<th>
+
+</th>
 </tr>
 </thead>
 <% @songs.each do |song| %>
@@ -31,7 +37,7 @@ Nazwa
 <%=link_to song.song_name, disc_song_path(@disc, song)  %><br>
 </td>
 <td>
-<%=link_to "Delete Song", [song.disc, song], method: :delete, data: {confirm: "Are you sure?"}%>
+<%=link_to "Delete Song", [song.disc, song], method: :delete, data: {confirm: "Are you sure?"}, class:"button is-danger"%>
 </td>
 </tr>
 <% end %>
@@ -44,7 +50,7 @@ Nazwa
 <%= link_to "Delete disc", disc_path(@disc),
                   method: :delete,
                   data: { confirm: "Are you sure?" }, class:"button is-danger" %></li>
-<%=link_to "Back to discs list ", discs_path, class:"button is-link"%></li>
+<%=link_to "Back", :back, class:"button is-link"%></li>
 </div>
 
 
