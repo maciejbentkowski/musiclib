@@ -1,5 +1,6 @@
 class Song < ApplicationRecord
     belongs_to :disc
     validates :song_name,presence: true, length: {maximum: 50}
-    validates :track_number, numericality: {only_integer: true, greater_than: 0}
+    validates :track_number, numericality: {only_integer: true, greater_than: 0}, uniqueness: {scope: :disc, message: "Track number must be unique in disc"}
+
 end

@@ -15,11 +15,10 @@ class ArtistsController < ApplicationController
         @artist = Artist.new(artist_params)
 
         if @artist.save
-            redirect_to @artist, notice: "Artist created succesfully!"
+            redirect_to @artist, success: "Artist created succesfully!"
 
         else
-            render :new
-            flash[:alert] = "Artist failed to create!"
+            render :new, warning: "Artist failed to create!"
         end
     end
     def edit
@@ -41,7 +40,7 @@ class ArtistsController < ApplicationController
             disc.destroy
           end
         @artist.destroy
-        redirect_to artists_path
+        redirect_to artists_path, danger: "You succesfully deleted Artist with his discs"
     end
 
     private

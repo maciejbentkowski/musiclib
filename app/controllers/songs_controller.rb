@@ -14,9 +14,9 @@ class SongsController < ApplicationController
         @disc = Disc.find(params[:disc_id])
         @song = @disc.songs.create!(song_params)
         if @song.save!
-            redirect_to disc_path(@disc), notice: "Song created succesfully!"
+            redirect_to disc_path(@disc), success: "Song created succesfully!"
         else
-            redirect_to root_path
+            redirect_to root_path, warning: "Disc failed to create"
         end
     end
 
@@ -26,7 +26,7 @@ class SongsController < ApplicationController
     @song = @disc.songs.find(params[:id])
     @song.destroy
 
-    redirect_to disc_path(@disc), alert: "Song deleted succesfully!"
+    redirect_to disc_path(@disc), danger: "Song deleted succesfully!"
     end
 
     private

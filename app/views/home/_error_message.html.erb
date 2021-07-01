@@ -1,0 +1,6 @@
+<% flash.each do |name, msg|%>
+<div class ='notification is-<%= name %>'>
+<button class="delete"></button>
+<%= msg %>
+</div>
+<% end %>
