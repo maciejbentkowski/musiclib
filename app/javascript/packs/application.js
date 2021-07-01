@@ -15,3 +15,4 @@ Turbolinks.start()
 ActiveStorage.start()
 
 require("packs/hamburger_menu")
+require("packs/alert_delete_button.js")

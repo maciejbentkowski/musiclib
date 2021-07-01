@@ -15,9 +15,11 @@ class ArtistsController < ApplicationController
         @artist = Artist.new(artist_params)
 
         if @artist.save
-            redirect_to @artist
+            redirect_to @artist, notice: "Artist created succesfully!"
+
         else
             render :new
+            flash[:alert] = "Artist failed to create!"
         end
     end
     def edit

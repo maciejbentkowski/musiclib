@@ -14,7 +14,7 @@ class DiscsController < ApplicationController
         @artist = Artist.find(params[:artist_id])
         @disc = @artist.discs.create!(disc_params)
         if @disc.save
-        redirect_to artist_path(@artist)
+        redirect_to artist_path(@artist), notice: "Disc created succesfully!"
         else
           render :new
         end
@@ -24,7 +24,7 @@ class DiscsController < ApplicationController
     @disc = Disc.find(params[:id])
     @disc.destroy
 
-    redirect_to artist_path
+    redirect_to artist_path, alert: "Disc deleted succesfully!"
   end
       private
         def disc_params
