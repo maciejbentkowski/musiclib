@@ -18,7 +18,7 @@ class ArtistsController < ApplicationController
             redirect_to @artist, success: "Artist created succesfully!"
 
         else
-            render :new, warning: "Artist failed to create!"
+            redirect_to new_artist_path, warning: "Artist failed to create!"
         end
     end
     def edit

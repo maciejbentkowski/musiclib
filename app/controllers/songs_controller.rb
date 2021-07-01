@@ -1,9 +1,9 @@
 class SongsController < ApplicationController
     def index
         @songs = Song.all
-        @disc = Disc.find_by(params[:disc_id])
         @song = Song.find_by(params[:id])
-        @artist = @disc.artists
+        @disc = Disc.find_by(params[:song_id])
+        @artists = Artist.where(params[@disc])
     end
     def show
         @song = Song.find(params[:id])

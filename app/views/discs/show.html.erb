@@ -1,19 +1,23 @@
+
 <div class="title is-size-3 has-text-weight-bold mx-3">
-<%=@disc.disc_name%><br>
-</div>
-   <figure class="is-1by1 mx-3 my-3">
-              <div class="modal-button">
-                  <%= image_tag(@disc.image)%>
-              </div>
 <% @disc.artists.each do |artist| %>
 <div class="title is-4">
 <%=link_to artist.artist_name, artist_path(artist)%><br>
 </div>
-
 <% end %>
 
+<%=@disc.disc_name%><br>
 
-<table class="table is-striped is-hoverable is-fullwidth ">
+
+</div>
+   <figure class="image is-128x128 mx-3 my-3">
+              <div class="modal-button">
+                  <%= image_tag(@disc.image)%>
+              </div>
+    </figure>
+
+
+<table class="table is-striped is-hoverable is-fullwidth mx-1 my-1 ">
 <thead>
 <tr>
 <th>
@@ -41,11 +45,16 @@ Nazwa
 </tr>
 <% end %>
 </table>
-
+<% if @song.errors.full_messages.any? %>
+  <% @song.errors.full_messages.each do |error_message| %>
+    <%= error_message if @song.errors.full_messages.first == error_message %> <br />
+  <% end %>
+<% end %>
 <%= render "songs/form" %>
 
 
 <div class="mx-1 mt-5">
+<%= link_to "Edit", edit_disc_path(@disc), class:"button is-warning" %>
 <%= link_to "Delete disc", disc_path(@disc),
                   method: :delete,
                   data: { confirm: "Are you sure?" }, class:"button is-danger" %></li>
