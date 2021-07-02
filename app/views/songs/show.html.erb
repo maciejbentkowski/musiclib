@@ -11,7 +11,7 @@
 Artists:
 
 
-<% @disc.artists.each do |artist|%>
+<% @song.disc.artists.each do |artist|%>
 <%= link_to artist.artist_name, artist_path(artist)%>
 <% end %>
 <br>
