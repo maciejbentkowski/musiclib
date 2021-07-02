@@ -1,6 +1,6 @@
 class SongsController < ApplicationController
     def index
-        @songs = Song.all.order("RANDOM()")
+        @songs =Song.search(params[:search])
         @disc = Disc.find_by(params[:id])
     end
     def show
@@ -31,6 +31,6 @@ class SongsController < ApplicationController
     private
 
     def song_params
-        params.require(:song).permit(:song_name, :track_number)
+        params.require(:song).permit(:song_name, :track_number, :search)
     end
 end
