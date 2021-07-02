@@ -22,7 +22,7 @@ Artists
 <%=link_to song.disc.disc_name, disc_path(song.disc)%>
 </td>
 <td>
-<% @artists.each do |artist|%>
+<% song.disc.artists.each do |artist|%>
 <%=link_to artist.artist_name, artist_path(artist) %>
 <% end %>
 </td>
