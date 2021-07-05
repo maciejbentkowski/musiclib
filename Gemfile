@@ -19,7 +19,7 @@ gem 'turbolinks', '~> 5'
 gem 'jbuilder', '~> 2.7'
 
 gem 'paperclip'
-gem 'aws-sdk', '~> 2.3'
+gem 'aws-sdk-s3'
 
 gem 'bootsnap', '>= 1.4.4', require: false
 gem "bulma-rails", "~> 0.9.1"
