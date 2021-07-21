@@ -1,4 +1,3 @@
-
 <%=render "home/search_bar"%>
 <table class="table is-striped is-hoverable is-fullwidth ">
 <thead>
@@ -17,7 +16,7 @@ Artists
 <% @songs.each do |song| %>
 <tr>
 <td>
-<%=link_to song.song_name, disc_song_path(@disc, song)%>
+<%=link_to song.song_name, disc_song_path(song.disc_id, song)%>
 </td>
 <td>
 <%=link_to song.disc.disc_name, disc_path(song.disc)%>

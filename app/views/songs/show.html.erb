@@ -1,21 +1,19 @@
 <div class="mx-1 my-1">
-<div class="is-size-2">
-<%= @song.song_name %>
-</div>
+    <div class="is-size-2">
+    <%= @song.song_name %>
+    </div>
+
+    <div class="is-size-4">
+    <h1>Disc: <%=link_to @song.disc.disc_name, disc_path(@disc)%></h1>
+    </div>
+
+    Artists:
 
 
-<div class="is-size-4">
-<%=link_to  "Disc: "<< @song.disc.disc_name, disc_path(@disc)%>
-</div>
+    <% @song.disc.artists.each do |artist|%>
+    <%= link_to artist.artist_name, artist_path(artist)%>
+    <% end %>
+    <br>
 
-Artists:
-
-
-<% @song.disc.artists.each do |artist|%>
-<%= link_to artist.artist_name, artist_path(artist)%>
-<% end %>
-<br>
-
-<%=link_to "Back", :back, class:"button is-link"%>
-
+    <%=link_to "Back", :back, class:"button is-link"%>
 </div>
