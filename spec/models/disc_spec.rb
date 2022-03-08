@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe Disc, type: :model do
-  let (:disc) {Disc.new(disc_name: 'Sample name', music_type: 'pop')}
+  let (:disc) {Disc.new(disc_name: 'Sample name', music_type: 'pop', image: )}
   context "when filling data is correct" do
   it "Disc name is not empty" do
     disc.disc_name = ''
