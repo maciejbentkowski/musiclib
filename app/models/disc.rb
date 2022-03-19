@@ -6,6 +6,5 @@ class Disc < ApplicationRecord
 
     validates :disc_name, presence: true, length: {maximum: 50}
     validates :music_type, presence: true
-    validates :image, presence: true
     validates :premiere_date, presence: true
 end
