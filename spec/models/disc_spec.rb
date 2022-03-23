@@ -1,8 +1,11 @@
 require 'rails_helper'
 
 RSpec.describe Disc, type: :model do
-  let(:disc) {Disc.new(disc_name: 'sample', music_type: 'pop', premiere_date: '2019-02-02')}
-  context "when filling data is correct" do
+  disc = Disc.new(
+    disc_name: 'Sample disc',
+    music_type: 'pop',
+    premiere_date: '2019-02-02'
+  )
   it "Disc name is not empty" do
     disc.disc_name = ''
     expect(disc).to_not be_valid
@@ -18,17 +21,20 @@ RSpec.describe Disc, type: :model do
     expect(disc).to be_valid
   end
   it "Music type is present" do
-  disc.music_type = ''
-  expect(disc).to_not be_valid
-  disc.music_type = 'pop'
-  expect(disc).to be_valid
-end
-end
-  context 'when data is provided' do
-    it 'saves the instance' do
-      disc.disc_name = "sample disc name"
-      expect((disc).save!).to eq true
-    end
-    end
+    disc.music_type = ''
+    expect(disc).to_not be_valid
+    disc.music_type = 'pop'
+    expect(disc).to be_valid
+  end
+  it "Music premiere date is present" do
+    disc.premiere_date = ''
+    expect(disc).to_not be_valid
+    disc.premiere_date = '2019-02-02'
+    expect(disc).to be_valid
+  end
+  it 'Saves the instance' do
+    expect((disc).save!).to eq true
+  end
+
 end
 

@@ -28,7 +28,6 @@ RSpec.describe Song, type: :model do
     expect(song.track_number).to be_truthy
   end
   it 'saves the instance' do
-    song.song_name = "sample song name"
     expect((song).save!).to eq true
   end
 
