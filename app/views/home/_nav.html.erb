@@ -22,6 +22,12 @@
       </div>
         <%= link_to "Discs", discs_path, class:"navbar-item" %>
         <%= link_to "Songs", songs_path, class:"navbar-item" %>
+        <% if user_signed_in? %>
+        <%= link_to "Logout", destroy_user_session_path, method: :delete, class:"navbar-item" %>
+        <% else %>
+        <%= link_to "Log In", new_user_session_path, class:"navbar-item" %>
+        <%= link_to "Sing Up", new_user_registration_path, class:"navbar-item" %>
+        <%end%>
         </div>
         </div>
 
