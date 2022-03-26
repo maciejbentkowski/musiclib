@@ -1,6 +1,10 @@
 class Disc < ApplicationRecord
     has_many :artist_discs
     has_many :artists, :through => :artist_discs
+
+    has_many :user_discs
+    has_many :users, :through => :user_discs
+
     has_many :songs, dependent: :destroy
     has_one_attached :image
 
