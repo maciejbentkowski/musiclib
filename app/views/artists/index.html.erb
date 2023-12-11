@@ -1,0 +1,13 @@
+<div class= "grid grod-flow-col grid-cols-3 gap-8 mx-auto" >
+  <% @artists.each do |artist|%>
+    <div class="container border h-80 ">
+      <div class="h1">
+        <%=artist.alias%>
+      </div>
+      <div>
+        <%=artist.first_name%>
+        <%=artist.last_name %>
+      </div>
+    </div>
+  <% end %>
+</div>

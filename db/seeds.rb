@@ -7,3 +7,9 @@
 #   ["Action", "Comedy", "Drama", "Horror"].each do |genre_name|
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
+
+
+5.times do |i|
+  Artist.create(alias:"Sample Alias #{i}", first_name: "Sample name #{i}", last_name:"Sample #{i}", birth_date: "1991-05-03", death_date: Date.today)
+end
+puts("Artists Initialized")
